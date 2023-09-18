@@ -9,7 +9,7 @@ import {
 import { auth } from "../Utils/Firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
-import { photoURL } from "../Utils/constant";
+import { Background_URL, photoURL } from "../Utils/constant";
 
 
 const Login = () => {
@@ -63,7 +63,7 @@ const Login = () => {
               // An error occurred
               setErrorMessage(error.message);
             });
-          console.log(user);
+          // console.log(user);
           // ...
         })
         .catch((error) => {
@@ -83,7 +83,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+          // console.log(user);
           // ...
         })
         .catch((error) => {
@@ -101,13 +101,14 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/42df4e1f-bef6-499e-87ff-c990584de314/5e7c383c-1f88-4983-b4da-06e14c0984ba/IN-en-20230904-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt="bg-log"
+        className="h-screen object-cover md:h-auto"
+          src={Background_URL}
+          alt="bg-logo"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute w-3/12 p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+        className="absolute w-9/12 md:w-3/12 p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
       >
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
