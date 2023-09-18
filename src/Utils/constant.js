@@ -24,7 +24,7 @@ export const API_OPTIONS = {
     { identifier: "urdu", name: "Urdu" },
   ];
 
-  export const OPENAI_KEY = "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"
+  export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY
 
   // 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
 
